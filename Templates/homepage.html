@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+
+{% block body%}
+    <h1> Welcome to Movie Rental..!! </h1>
+         <form method="post">
+           {% csrf_token %}
+
+            <br><label for="uname"><b>Username</b></label><br>
+
+             <div >
+                 <input type="text" placeholder="Enter Username" name="username" required><br><br>
+             </div>
+
+
+           <label for="psw"><b>Password</b></label><br>
+
+           <div >
+                 <input type="password"  placeholder="Enter Password" name="password" required><br><br>
+           </div>
+
+           <br><button type="submit">Login</button>
+
+        </form>
+{% endblock %}

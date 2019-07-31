@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+
+{% block head %}
+    <style>
+        table,th,td,tr{
+        border: 1px solid black;
+        }
+
+        </style>
+{% endblock %}
+
+{% block body %}
+<h1>List Of Movies.</h1>
+<table>
+            <tr>
+                <th>Movie Name</th>
+                <th>Movie Actor</th>
+                <th>Movie Year</th>
+                <th>Genre</th>
+                <th>Price</th>
+                <th>Delete</th>
+                <th>Update</th>
+
+
+            </tr>
+            {% for m in moviename %}
+            <tr>
+                <td>{{m.name}}</td>
+                <td>{{m.actor}}</td>
+                <td>{{m.year}}</td>
+                <td>{{m.genre}}</td>
+                <td>{{m.price}}</td>
+                <td><a href="{% url 'deleteMovie' m.id %}"><input type="submit" value="Delete"></a> </td>
+                <td><a href="{% url 'updatemovie' m.id %}"><input type="submit" value="Update"></a> </td>
+
+            </tr>
+            {% endfor %}
+</table>
+{% endblock %}

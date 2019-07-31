@@ -1,0 +1,46 @@
+{% extends 'index.html' %}
+{% block head %}
+ <style>
+        table,th,td,tr{
+        border: 1px solid black;
+        }
+
+        </style>
+
+{% endblock %}
+
+{% block body %}
+<h1>List Of Customers</h1>
+<table>
+
+
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+                <th>Zipcode</th>
+                <th>Email</th>
+                <th>Delete</th>
+                <th>Update</th>
+
+            </tr>
+
+
+
+            {% for c in customername %}
+
+
+            <tr>
+                <td>{{c.name}}</td>
+                <td>{{c.age}}</td>
+                <td>{{c.city}}</td>
+                <td>{{c.zipcode}}</td>
+                <td>{{c.email}}</td>
+                <td><a href="{% url 'deleteCustomer' c.id %}"><input type="submit" value="Delete"></a> </td>
+                <td><a href="{% url 'updatecustomer' c.id %}"><input type="submit" value="Update"></a> </td>
+
+            </tr>
+
+            {% endfor %}
+        </table>
+{% endblock %}

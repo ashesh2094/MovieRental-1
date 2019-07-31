@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+{% block head %}
+        <title>Adssign Customers</title>
+{% endblock %}
+
+{% block body%}
+<h1>Assign Movie</h1>
+        <form method = 'post'>
+            {% csrf_token %}
+            <select name="movie_id">
+                {% for movies in moviedata %}
+                    <option value="{{movies.id}}">{{movies.name}}</option>
+                {% endfor %}
+            </select>
+
+            <select name="customer_id" >
+                {% for customer in customerdata %}
+                    <option value="{{customer.id}}">{{customer.name}}</option>
+                {% endfor %}
+            </select>
+            <button type = 'submit'>Assign</button>
+        </form>
+{% endblock %}

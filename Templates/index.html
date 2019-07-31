@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Movie Rental</title>
+    {% endblock %}
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+</head>
+<body>
+    <h1 align="center" style="color:black">
+        Movie Rental
+    </h1>
+
+    <div class="main">
+        <a href="{% url 'homepage'%}">HOME</a>
+        <a href="{% url 'movies' %}">MOVIES</a>
+        <a href="{% url 'customer' %}">CUSTOMERS</a>
+        <a href="{% url 'assign'%}">ASSIGN</a>
+        <a href="{% url 'rentedmovie'%}">RENTED</a>
+        <a href="{% url 'availablemovie'%}">AVAILABLE</a>
+        <a href="{% url 'addmovie'%}">ADD MOVIE</a>
+        <a href="{% url 'addCustomer'%}">ADD CUSTOMER</a>
+        <a href="{% url 'Logout' %}">LOGOUT</a>
+    </div>
+
+
+
+    {% block body %}
+
+    {% endblock %}
+</body>
+</html>
